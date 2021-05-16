@@ -43,7 +43,12 @@ class MainActivity : AppCompatActivity() {
         //adding the popup as a new layout in the context and displaying
         val popupView = LayoutInflater.from(this).inflate(R.layout.popup_layout, null)
         val wm = this.getSystemService(WINDOW_SERVICE) as WindowManager
-        wm.addView(popupView,mParams)
+
+        //abrir o popup
+        //open the popup
+        this.findViewById<Button>(R.id.btnOpen).setOnClickListener {
+            wm.addView(popupView,mParams)
+        }
 
         // usando o popupView como contexto para conseguir acessar o botão que está no layout dele
         // using popupView as a context to be able to access the button that is on its layout
